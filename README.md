@@ -71,3 +71,4 @@ python main.py --tickers SPY AGG --rf 0.045 --save --out my_dashboard.png
 - 波动率：涨跌一视同仁（+5% 和 -5% 贡献相同）
 - 回撤：**只衡量你实际亏损体验的幅度**
 - 相同夏普的两个策略，-20% 和 -60% 最大回撤的持有体验天壤之别
+"# quant-toolkit" 
