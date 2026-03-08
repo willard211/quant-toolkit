@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.env
+
+# MacOS
+.DS_Store
+
+# Output files
+*.png
+*.jpg
+*.pdf
+*.csv
+# If you want to keep the example dashboard, comment out *.png or explicitly add it:
+!dashboard.png
+
+# IDEs
+.vscode/
+.idea/
