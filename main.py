@@ -116,6 +116,9 @@ def run_pipeline(
     print("\n" + "█" * 60)
     print("█  分析完成！Concept 50: 这些工具构成了所有高级量化  █")
     print("█  策略的基础：期权定价、蒙特卡洛模拟、因子模型...  █")
+    print("█" * 60)
+    print(" 提示: 如果你看不懂上面表格里的专有名词，请运行:")
+    print("   python main.py --explain")
     print("█" * 60 + "\n")
 
     return {
@@ -168,14 +171,23 @@ def parse_args():
         dest="chart_path",
         help="图表输出路径（默认: dashboard.png）",
     )
+    parser.add_argument(
+        "--explain",
+        action="store_true",
+        help="打印量化金融指标的通俗白话文解释",
+    )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
-    results = run_pipeline(
-        tickers=args.tickers,
-        rf_rate=args.rf_rate,
-        save_chart=args.save,
-        chart_path=args.chart_path,
-    )
+    if args.explain:
+        import explainer
+        explainer.print_explanations()
+    else:
+        results = run_pipeline(
+            tickers=args.tickers,
+            rf_rate=args.rf_rate,
+            save_chart=args.save,
+            chart_path=args.chart_path,
+        )
